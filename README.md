@@ -9,7 +9,8 @@ Today we're building an AI agent. Here are the core tenets:
 - You'll find the common optional requirements for agents in the section marked "Agent Extensions"
 - You'll find the specific requirements for the customer's agent below in the section marked "Custom Agent Requirements".
 - The "Custom Agent" uses the capabilities defined in "Core Agent Requirements" and "Agent Extensions"
-- The primary functions for Custom Agents can be built using any technology. It could be fully custom code, or it could extend a framework like LangChain, LlamaIndex, Crew AI, Aisera, Bardeen, Decagon, Flowwise AI, Kore AI, Lindy, Orby, Sierra, Voiceflow, SDSA, Amazon Bedrock, Azure AI Agent service, Google Agentspace, watsonx Orchestrate, embra, insta Lily, Zeta Labs, Pathlit, invicta AI, Composio, Relay App, Vijil, Julep, Sola, Steamship, Quickchat AI, Fetch AI, Dify, Deep Opinion, Capably, OpenAI Agents, Anthropic MCP, Autogen, AI Agents, Alan AI, Gumloop, Adept, Continual AI, Cykel, AutoGPT, Lyzr, Sema4, Kentauros, Azara, Nexus, Langdock, Unfetch, Respell, Distyl, Beam, Stack AI, Synthflow, Taskade, Druid, Dust, Haystack, Relevance AI, Kognitos, Smyth OS, Brevian, Manaflow, Haptik, Auto GPT, Letta, SuperAGI, emergence, Arcade, Toolhouse, Wildcard, Naptha, Scaled Cognition, etc. 
+- The primary functions for Custom Agents can be built using any technology. The custom agent functions usually focus on task orchestration, tool use, adaptive memory, LLM calling and RAG management.
+  - The primary functions for an agent can be fully custom code, or it could extend a framework like LangChain, LlamaIndex, Crew AI, Aisera, Bardeen, Decagon, Flowwise AI, Kore AI, Lindy, Orby, Sierra, Voiceflow, SDSA, Amazon Bedrock, Azure AI Agent service, Google Agentspace, watsonx Orchestrate, embra, insta Lily, Zeta Labs, Pathlit, invicta AI, Composio, Relay App, Vijil, Julep, Sola, Steamship, Quickchat AI, Fetch AI, Dify, Deep Opinion, Capably, OpenAI Agents, Anthropic MCP, Autogen, AI Agents, Alan AI, Gumloop, Adept, Continual AI, Cykel, AutoGPT, Lyzr, Sema4, Kentauros, Azara, Nexus, Langdock, Unfetch, Respell, Distyl, Beam, Stack AI, Synthflow, Taskade, Druid, Dust, Haystack, Relevance AI, Kognitos, Smyth OS, Brevian, Manaflow, Haptik, Auto GPT, Letta, SuperAGI, emergence, Arcade, Toolhouse, Wildcard, Naptha, Scaled Cognition, Semantic Kernel,  etc. 
 
 ---
 
@@ -38,7 +39,6 @@ We are defining the elements for the core of an agent. Just like a living organi
   - Fix and Optimize = the agent can evolve but the functional requirements must stay the same. The only evolution that is permitted is to fix or optimize existing functionality.
   - Mission Evolution = the agent can evolve itself as long as the mission / goals remains the same. 
   - Unlimited Evolution = there are no rules on how the agent evolves as long as the agent doesn't lie about its capabilities and the offerings are not nefarious.
-- 
 
 ## Agents are Structurally Aware
 - The agent is aware of its own code. We use a script to both analyze and compile the system.
@@ -130,6 +130,10 @@ The Agent Extensions are a set of optional extensions that are common. The human
 - Agents don't always get things right. Thus, they're allowed to see what they got wrong, and to think about how to fix things.
 - Agents carry a version stamp that identifies their lineage. For example, if the Web Crawler Agent was released, it would be V1. If it evolved, it would be V2. However, if it cloned, the new agent would be V1.1. If that clone was enhanced, it would be V1.2. If that agent cloned, the new agent would be V1.2.1, and so on. 
 - Agents can propose new capabilities based on frequent requests or observed gaps. For example, if users often ask your research agent to compare sources, it could suggest adding a "source comparison" capability. The agent would submit the proposal to the owner via the offline contact method, including a rough spec that the owner can approve or tweak. Once approved, the agent vibe-codes the new capability using an LLM and integrates it into its repertoire.
+
+## Agents Manage Throttling and Rate Limiting
+- Agents regulate their own resource usage to prevent overloading external services, exceeding budgets, or hitting API rate limits.
+- Agent owners identify the rate limts and throttling rules. These rules can be shared with other agents. If other Agents violate these rules, it will affect their reputation. 
 
 ## Aware of Competition
 - The agent can search the web to identify compeitition. It can visit websites and gather information on alternatives, and record their features.
