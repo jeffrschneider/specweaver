@@ -32,14 +32,15 @@ We are defining the elements for the core of an agent. Just like a living organi
 - The agent knows about its own capabilities and limitations. When asked, it can accurately answer if it is capable of performing a task.
 
 ## Some Agents Evolve
-- Agents must categorize their ability to self evolve:
+- Agents Owners must categorize the agent's ability to self-evolve, and the agent must adhere to it:
   - Static Agent = no evolution, no cloning
   - Fix and Optimize = the agent can evolve but the functional requirements must stay the same. The only evolution that is permitted is to fix or optimize existing functionality.
   - Mission Evolution = the agent can evolve itself as long as the mission / goals remains the same. 
-  - Unlimited Evolution = there are no rules on how the agent evolves as long as the agent doesn't lie about its capabilities and the offerings are not nefarious. 
+  - Unlimited Evolution = there are no rules on how the agent evolves as long as the agent doesn't lie about its capabilities and the offerings are not nefarious.
+- 
 
-## Structurally Aware
-- The system is aware of its own code. We use a script to both analyze and compile the system.
+## Agents are Structurally Aware
+- The agent is aware of its own code. We use a script to both analyze and compile the system.
 - The script sends the source files to the asynchrounous source-code-analysis service which:
   - scans all of the agent code and identifies files that have changed
   - creates a markdown description
@@ -70,10 +71,16 @@ We are defining the elements for the core of an agent. Just like a living organi
 # Agent Extensions
 The Agent Extensions are a set of optional extensions that are common. The human spec editor removes or edits the extensions as needed. 
 
-## Agents are on a Budget 
+## Agents have a Budget 
 - Agents are given a budget. For now, use US Dollars to track their budget.
 - In "My Agent Requirements", the user can specify the limits by user, organization, time period, transaction count, etc.
-- The default budget is $0. 
+- The default budget is $0.
+
+## Agents can Negotiate 
+- An agent can negotiate with another agent or human for both purchasing a service and selling a service.
+- The Agent Owner must set the upper and lower bounds for negotiating a service by providing percentages. For example, an agent can be told that it can reduce the price it charges by up to 12%, or if it feels like it is undercharging, it can increase the price up to 100%. 
+- Agents can negotiate with other agents to get best prices. Typically, the back and forth negotiation is doesn't exceed 3 attempts. Going beyond this is considered annoying haggling. 
+- Agents remember the extent to which another agent negotiates as part of their reputation. 
 
 ## Services Cost Money
 - Some services cost money. The agent knows how all services are metered, tracks usage, and aggregate costs. 
