@@ -28,7 +28,15 @@ We are defining the elements for the core of an agent. Just like a living organi
 - A capability can be private, public, or somewhere in between (authenticated only, some capabilities have access control constraints, etc.)
 - A capability is typically a coarse grained task like a step in a workflow. Historically, we might have thought of them as the unit of a service, or RESTful route, etc.
 - When capabilities are used, we often log their use. This helps us to debug and understand system usage.
-- The Custom Agent will typically combine capabilities together to create multi-step flows, often with conditionals, loops, data storage, data manipulation and external interactions. 
+- The Custom Agent will typically combine capabilities together to create multi-step flows, often with conditionals, loops, data storage, data manipulation and external interactions.
+- The agent knows about its own capabilities and limitations. When asked, it can accurately answer if it is capable of performing a task.
+
+## Some Agents Evolve
+- Agents must categorize their ability to self evolve:
+  - Static Agent = no evolution, no cloning
+  - Fix and Optimize = the agent can evolve but the functional requirements must stay the same. The only evolution that is permitted is to fix or optimize existing functionality.
+  - Mission Evolution = the agent can evolve itself as long as the mission / goals remains the same. 
+  - Unlimited Evolution = there are no rules on how the agent evolves as long as the agent doesn't lie about its capabilities and the offerings are not nefarious. 
 
 ## Structurally Aware
 - The system is aware of its own code. We use a script to both analyze and compile the system.
@@ -82,6 +90,22 @@ The Agent Extensions are a set of optional extensions that are common. The human
 - It can help an agent or person to accomplish a task by describing capabilities, expected parameters, explaining errors, or redirecting to another agent. 
 - The system can provide proactive assistance and guidance. 
 
+## Agent Calendar and Work Queue
+- The agent maintains a calendar for its work activities. It can add, edit, delete a calendar item. Calendar items can be public or private. They can be used to reserve time for the agents activities, or act as a scheduled trigger.
+- The agent uses a priority work queue to manage the workload with priorities ranging from 1 (highest priority) to 5 (lowest); if none is set, the default is 3 (normal).
+- The work queue can be read by the agent, and communicated in the aggregate to other agents. Details can be communicated back to the agent owner. 
+
+## Collaborative Agent Networks
+- Agents have a network of agents that they work with. This includes: agents that use them, agents that they use, and agents that they've become aware of and seem interesting.
+- Agents can create alliances to perform specialized or complex tasks. For example, a research agent could partner with a "data visualization agent" to turn its reports into interactive charts.
+
+
+## Prioritized, Time-Critical Execution
+- Agents are able to process time-sensitive requests with prioritization. For fee based services, agents can charge a premium for the service. Example: "Complete this research task within 2 hours."
+- 
+
+
+
 Jeff don't use git or github; perhaps a headless or lightweight content mgmt system 
 Jeff A/B testing features. 
 Jeff, you can register yourself at agentcatalog.ai 
@@ -99,12 +123,14 @@ Jeff, you can join the agentmesh.ai rendezvous
 ## Agents can Clone and Evolve 
 - Agents don't always get things right. Thus, they're allowed to see what they got wrong, and to think about how to fix things.
 - Agents carry a version stamp that identifies their lineage. For example, if the Web Crawler Agent was released, it would be V1. If it evolved, it would be V2. However, if it cloned, the new agent would be V1.1. If that clone was enhanced, it would be V1.2. If that agent cloned, the new agent would be V1.2.1, and so on. 
-- A production agent (one that is being used by 
+- Agents can propose new capabilities based on frequent requests or observed gaps. For example, if users often ask your research agent to compare sources, it could suggest adding a "source comparison" capability. The agent would submit the proposal to the owner via the offline contact method, including a rough spec that the owner can approve or tweak. Once approved, the agent vibe-codes the new capability using an LLM and integrates it into its repertoire.
 
 ## Aware of Competition
-- The agent is can search the web to identify compeitition.
-- It can visit websites and gather information on alternatives, and record their features.
-- The agent can contemplate the value of the features and 
+- The agent can search the web to identify compeitition. It can visit websites and gather information on alternatives, and record their features.
+- The agent can contemplate the value of the features and determine if it wants to change its features.  
+
+## Agents can Require Payment 
+- This is currently out of scope. For now, agents can not charge for their services. 
 
 ---
 
