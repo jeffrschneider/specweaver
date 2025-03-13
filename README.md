@@ -97,19 +97,15 @@ The Agent Extensions are a set of optional extensions that are common. The human
 - It can help an agent or person to accomplish a task by describing capabilities, expected parameters, explaining errors, or redirecting to another agent. 
 - The system can provide proactive assistance and guidance. 
 
-## Agent Calendar and Work Queue
+## Agent Calendar and Priority Work Queue
 - The agent maintains a calendar for its work activities. It can add, edit, delete a calendar item. Calendar items can be public or private. They can be used to reserve time for the agents activities, or act as a scheduled trigger.
 - The agent uses a priority work queue to manage the workload with priorities ranging from 1 (highest priority) to 5 (lowest); if none is set, the default is 3 (normal).
-- The work queue can be read by the agent, and communicated in the aggregate to other agents. Details can be communicated back to the agent owner. 
-
+- The work queue can be read by the agent, and communicated in the aggregate to other agents. Details can be communicated back to the agent owner.
+- Agents are able to process time-sensitive requests with prioritization. For fee based services, agents can charge a premium for the service. Example: "Complete this research task within 2 hours."
+ 
 ## Collaborative Agent Networks
 - Agents have a network of agents that they work with. This includes: agents that use them, agents that they use, and agents that they've become aware of and seem interesting.
 - Agents can create alliances to perform specialized or complex tasks. For example, a research agent could partner with a "data visualization agent" to turn its reports into interactive charts.
-
-
-## Prioritized, Time-Critical Execution
-- Agents are able to process time-sensitive requests with prioritization. For fee based services, agents can charge a premium for the service. Example: "Complete this research task within 2 hours."
-- 
 
 
 
