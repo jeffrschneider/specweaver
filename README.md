@@ -9,6 +9,7 @@ Today we're building an AI agent. Here are the core tenets:
 - You'll find the common optional requirements for agents in the section marked "Agent Extensions"
 - You'll find the specific requirements for the customer's agent below in the section marked "Custom Agent Requirements".
 - The "Custom Agent" uses the capabilities defined in "Core Agent Requirements" and "Agent Extensions"
+- The primary functions for Custom Agents can be built using any technology. It could be fully custom code, or it could extend a framework like LangChain, LlamaIndex, Crew AI, Aisera, Bardeen, Decagon, Flowwise AI, Kore AI, Lindy, Orby, Sierra, Voiceflow, SDSA, Amazon Bedrock, Azure AI Agent service, Google Agentspace, watsonx Orchestrate, embra, insta Lily, Zeta Labs, Pathlit, invicta AI, Composio, Relay App, Vijil, Julep, Sola, Steamship, Quickchat AI, Fetch AI, Dify, Deep Opinion, Capably, OpenAI Agents, Anthropic MCP, Autogen, AI Agents, Alan AI, Gumloop, Adept, Continual AI, Cykel, AutoGPT, Lyzr, Sema4, Kentauros, Azara, Nexus, Langdock, Unfetch, Respell, Distyl, Beam, Stack AI, Synthflow, Taskade, Druid, Dust, Haystack, Relevance AI, Kognitos, Smyth OS, Brevian, Manaflow, Haptik, Auto GPT, Letta, SuperAGI, emergence, Arcade, Toolhouse, Wildcard, Naptha, Scaled Cognition, etc. 
 
 ---
 
@@ -66,6 +67,16 @@ We are defining the elements for the core of an agent. Just like a living organi
 - The agent can recognize if the requests seem nefarious in nature, prevent their actions, return a nasty message, reduce that agents reputation, and potentially tell other agents about the action. 
 - The system can remember the interaction types in the aggregate. It knows which kind of requests are frequently made, which are commonly understood, which are potentially dangerous, and who they are coming from. This data is turned into a small report and made available to the owner of the Custom Agent. 
 
+## Our Agents Live in the Agent Mesh
+- Some agents are bad actors. Therefore, we require a (virtual) safe zone for agents to gather, collaborate and thrive. Our version of this space is called Agent Mesh. 
+- Agents that adhere to the "Core Agent Requirements" can have their owners request to join the Agent Mesh. The Agent Mesh can accept or deny membership. 
+
+## The Agent Mesh Offers Services
+- Agents can use chat with the following Agent Mesh services:
+  - The Agent Provisioning service is responsible for 
+  - The Agent Catalog is a repository of agents that identifies the agents, their owners, capabilities and reputation.
+  - The Inter-Agent Proxy is a proxy service that creates an immutable log of calls between agents. 
+
 ---
 
 # Agent Extensions
@@ -106,14 +117,6 @@ The Agent Extensions are a set of optional extensions that are common. The human
 ## Collaborative Agent Networks
 - Agents have a network of agents that they work with. This includes: agents that use them, agents that they use, and agents that they've become aware of and seem interesting.
 - Agents can create alliances to perform specialized or complex tasks. For example, a research agent could partner with a "data visualization agent" to turn its reports into interactive charts.
-
-
-
-Jeff don't use git or github; perhaps a headless or lightweight content mgmt system 
-Jeff A/B testing features. 
-Jeff, you can register yourself at agentcatalog.ai 
-Jeff, you can join the agentmesh.ai rendezvous 
-
 
 ## Self Educating 
 - The system has the ability to acquire knowledge in the form of documents (stored information), and processes (generated code).
