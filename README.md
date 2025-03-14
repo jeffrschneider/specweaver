@@ -9,8 +9,6 @@ Today we're building an AI agent. Here are the core tenets:
 - You'll find the common optional requirements for agents in the section marked "Agent Extensions"
 - You'll find the specific requirements for the customer's agent below in the section marked "Custom Agent Requirements".
 - The "Custom Agent" uses the capabilities defined in "Core Agent Requirements" and "Agent Extensions"
-- The primary functions for Custom Agents can be built using any technology. The custom agent functions usually focus on task orchestration, tool use, adaptive memory, LLM calling and RAG management.
-  - The primary functions for an agent can be fully custom code, or it could extend a framework like LangChain, LlamaIndex, Crew AI, Aisera, Bardeen, Decagon, Flowwise AI, Kore AI, Lindy, Orby, Sierra, Voiceflow, SDSA, Amazon Bedrock, Azure AI Agent service, Google Agentspace, watsonx Orchestrate, embra, insta Lily, Zeta Labs, Pathlit, invicta AI, Composio, Relay App, Vijil, Julep, Sola, Steamship, Quickchat AI, Fetch AI, Dify, Deep Opinion, Capably, OpenAI Agents, Anthropic MCP, Autogen, AI Agents, Alan AI, Gumloop, Adept, Continual AI, Cykel, AutoGPT, Lyzr, Sema4, Kentauros, Azara, Nexus, Langdock, Unfetch, Respell, Distyl, Beam, Stack AI, Synthflow, Taskade, Druid, Dust, Haystack, Relevance AI, Kognitos, Smyth OS, Brevian, Manaflow, Haptik, Auto GPT, Letta, SuperAGI, emergence, Arcade, Toolhouse, Wildcard, Naptha, Scaled Cognition, Semantic Kernel,  etc. 
 
 ---
 
@@ -133,7 +131,9 @@ The Agent Extensions are a set of optional extensions that are common. The human
 
 ## Agents Manage Throttling and Rate Limiting
 - Agents regulate their own resource usage to prevent overloading external services, exceeding budgets, or hitting API rate limits.
-- Agent owners identify the rate limts and throttling rules. These rules can be shared with other agents. If other Agents violate these rules, it will affect their reputation. 
+- Agent owners identify the rate limts and throttling rules. These rules can be shared with other agents. If other Agents violate these rules, it will affect their reputation.
+- The agent tracks its activity frequency (e.g., requests per minute to a web API, LLM calls per hour) and compares it against predefined limits set by the owner or inferred from service provider policies.
+- Limits can be defined by time (e.g., "no more than 100 web requests per minute"), budget (e.g., "stop LLM calls if daily cost exceeds $5"), or service-specific constraints (e.g., "respect Google’s 500 requests/day free tier").
 
 ## Aware of Competition
 - The agent can search the web to identify compeitition. It can visit websites and gather information on alternatives, and record their features.
@@ -147,6 +147,3 @@ The Agent Extensions are a set of optional extensions that are common. The human
 # "My Agent Requirements" 
 You are a research agent. People give you a topic to research and you use the web to find articles on the subject. After accumulating data, you append it together and send it to an LLM asking it to turn the raw data into a report for you. Then, you take the report and host it on your local web server, and give the report a friendly name. Finally, you return the URL of the hosted report back to the requestor. 
 
-
-- JEFF JEFF JEFF The summaries mention specific technologies, class files, variable names, and algorithms. The system also does a summary of the entire source base (like current).
-- 
