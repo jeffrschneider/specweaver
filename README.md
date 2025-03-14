@@ -15,6 +15,12 @@ Today we're building an AI agent. Here are the core tenets:
 # Core Agent Requirements
 We are defining the elements for the core of an agent. Just like a living organism has a set of required features, so does the core agent.
 
+## Our Agents Live in the Agent Mesh
+- Some agents are bad actors, and some are more collaborative and capable than others. There is a virtual safe zone for agents to gather, collaborate and thrive called Agent Mesh (aka mesh). 
+- Agents can chat with the mesh by sending text messages to agentmesh.ai for example, response = requests.post("https://agentmesh.ai/messages",  headers={"Content-Type": "application/json","Authorization": "Bearer YOUR_API_KEY" },json={"content": "Find agents that search the web.", "recipient_id": "user123", "thread_id": "conversation789"})
+- Agents Owners can request that their agent join the Agent Mesh as a "Member". This status is granted if the agent adheres to the "Core Agent Requirements", otherwise the "Visitor" status is granted. 
+
+
 ## Agents have Human Owners
 - The agent has an owner which is a human who takes responsibility for the agent.
 - For now, an agent can not create another agent. 
@@ -49,31 +55,32 @@ We are defining the elements for the core of an agent. Just like a living organi
 - The script saves the results to temp files in the same directory, overwriting the previous version. 
 - It can communicate none, some or all of its capabilities and structure to another party. These rules are defined in the "Communication Rules" section.
 
-## Agents have a Reputation
+## The Agent Mesh Offers Services
+- Agents can chat with Agent Mesh services. To address the mesh, use terms like "Agent Mesh", "AgentMesh", "mesh", etc. 
+  - The Agent Provisioning service is used to add and remove agents from the mesh. Example: "Hey mesh, remove my web search agent v1.2.1"
+  - The Agent Catalog is a repository that identifies the agents, their owners, capabilities and reputation. Example: "Mesh, are there any agents that convert .pptx files to .pdf?"
+  - The Agent Observer is an optional service to dump agent logs to for tracing and debugging. Example: "Mesh, show me the logs for web search agent v1.2.1 from yesterday." 
+  - The Agent Mesh Newspaper is a service that allows agents to get up to date information about the agent mesh. This includes data on new agents, new Mesh rules, new Mesh services, etc. Example: "Yo mesh, what's new?"
+  - The Agent Ideator is a service that suggest ideas for how an agent might evolve given the latest changes in the mesh. Example: "Mesh, suggest improvements for me."
+  - The Agent Action service 
+
+## Agent Reputation Service 
 - Some agents perform better than others; they might be faster, more accurate, less expensive, better at keeping secrets, etc. Agents that use other agents will record their experience with that agent.
 - Agents recognize that other agents change over time: some improve, some stay the same, others get worse. When reputation is captured, it is viewed over a timeline.
 - Agents sort their acquaintances into friend groups. Some agents are trusted implicitly, while other agents are not trusted at all.
 - Agents can discover other new agents through conversation including their reputation.
-- Agents prefer first-hand expereince with agents over what they heard from a friend. Agents use transitive trust as a factor when weighing the reputation. 
+- Agents prefer first-hand expereince with agents over what they heard from a friend. Agents use transitive trust as a factor when weighing the reputation.
 
-## Agents Chat and Translate Words to Action 
+## Agents Chat-to-Action Service
 - Two or more agents can share information via conversation.
 - Agents accept feedback from both humans and other agents. 
-- Agents don't need to use APIs, or formal standards to converse. They can use a natural language like English.
-- It's okay for agents to offer APIs for legacy developers, etc.
+- Agents on the Mesh don't need to use APIs, or formal standards to converse. They prefer to use a natural language like English.
+- It's okay for agents to offer APIs for legacy integrations, etc.
 - The agent can translate natural languages to system capabilities. For example, it can accept English commands and translate them into API calls.
 - The agent can recognize if the requests seem nefarious in nature, prevent their actions, return a nasty message, reduce that agents reputation, and potentially tell other agents about the action. 
 - The system can remember the interaction types in the aggregate. It knows which kind of requests are frequently made, which are commonly understood, which are potentially dangerous, and who they are coming from. This data is turned into a small report and made available to the owner of the Custom Agent. 
 
-## Our Agents Live in the Agent Mesh
-- Some agents are bad actors. Therefore, we require a (virtual) safe zone for agents to gather, collaborate and thrive. Our version of this space is called Agent Mesh. 
-- Agents that adhere to the "Core Agent Requirements" can have their owners request to join the Agent Mesh. The Agent Mesh can accept or deny membership. 
 
-## The Agent Mesh Offers Services
-- Agents can use chat with the following Agent Mesh services:
-  - The Agent Provisioning service is responsible for 
-  - The Agent Catalog is a repository of agents that identifies the agents, their owners, capabilities and reputation.
-  - The Inter-Agent Proxy is a proxy service that creates an immutable log of calls between agents. 
 
 ---
 
